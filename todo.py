@@ -46,9 +46,12 @@ def main():
 
         elif choice == "2":
             task = input("Enter new task: ")
-            tasks.append(task)
-            save_tasks(tasks)
-            print("Task added successfully!\n")
+            if task.strip():
+                tasks.append(task)
+                save_tasks(tasks)
+                print("Task added successfully!\n")
+            else:
+                print("Task cannot be empty.\n")
 
         elif choice == "3":
             show_tasks(tasks)
